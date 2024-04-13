@@ -14,12 +14,14 @@ I intend to create a website that allows users to choose who they think will win
 * 
 
 **New Technology**
-* 
+* TailwindCSS
+
 
 ---
 ## Stretch Goals
 * Add extra "betting" options and subsequent rewards/penalties
-*  
+* Add Bucket, a competitive group of users whose picks are grouped together, to project
+
 
 ---
 ## Project Schedule
@@ -58,5 +60,6 @@ Currently in development
 ---
 ## Author
 [CodyDecoder](https://github.com/codydecoder)\
+[CodyCadena](https://www.linkedin.com/in/codycadena/)\
 This project was created solely by Cody Cadena
 
