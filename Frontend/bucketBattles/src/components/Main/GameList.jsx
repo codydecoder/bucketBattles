@@ -31,7 +31,7 @@ export default function GameList(){
             <h1 className='text-2xl font-bold'>All Games</h1>
             <ul>
                 {games.map((game, key) => (
-                    <div className="" key={game._id}>
+                    <div className="border-2 border-red-600 bg-gray-400 rounded m-1" key={game._id}>
                             <h3 className="text-lg">Game: <span className='text-sm'>{game.homeTeam.name} vs {game.awayTeam.name}</span></h3>
                             <h3 className='text-lg'>Winner: <span className='text-sm'>{game.winningTeam ? game.winningTeam.name : 'TBD'}</span></h3>
                     </div>
