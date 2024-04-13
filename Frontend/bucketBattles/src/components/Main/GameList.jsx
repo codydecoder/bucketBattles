@@ -27,7 +27,7 @@ export default function GameList(){
 
     } else {
         return (
-        <div className="border-2 border-black bg-gray-200 mx-auto p-4 m-0 border-t-0 border-b-0 min-h-full">
+        <div className="border-2 border-black bg-gray-200 container mx-auto p-4 m-0 border-t-0 border-b-0 min-h-full">
             <h1 className='text-2xl font-bold'>All Games</h1>
             <ul>
                 {games.map((game, key) => (

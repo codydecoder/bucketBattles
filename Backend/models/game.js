@@ -3,9 +3,9 @@ const {Schema} = require('mongoose')
 
 const Game = new Schema(
     {
-        homeTeam: {type: Schema.Types.ObjectId, ref: 'team_id'},
-        awayTeam: {type: Schema.Types.ObjectId, ref: 'team_id'},
-        winningTeam: {type: Schema.Types.ObjectId, ref: 'team_id', default: null}
+        homeTeam: {type: Schema.Types.ObjectId, ref: 'teams'},
+        awayTeam: {type: Schema.Types.ObjectId, ref: 'teams'},
+        winningTeam: {type: Schema.Types.ObjectId, ref: 'teams', default: null}
     },
     {timestamps: true}
 )
