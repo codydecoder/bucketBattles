@@ -9,7 +9,6 @@ const getAllTeams = async (req, res) => {
     }
 }
 
-
 const getTeamById = async (req, res) => {
     try {
         const {id} = req.params

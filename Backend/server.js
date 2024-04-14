@@ -23,7 +23,6 @@ app.use(bodyParser.json())
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
 
 
-
 app.get('/', (req, res) => res.send('This is our landing page!'))
 
 //user controllers
@@ -46,13 +45,4 @@ app.get('/picks/:id', pickController.getPickById)
 app.post('/picks', pickController.createPick)
 app.put('/picks/:id', pickController.updatePick)
 app.delete('/picks/:id', pickController.deletePick)
-
-//EXAMPLE CODE DELETE AT END
-// app.get('/users', userController.getAllUsers)
-// app.get('/users/:id', userController.getUserByUsername)
-// app.get('/users/:id/exercises', userController.getExercisesByUserId)//get user exercises
-// app.get('/users/:id/workoutPlans', userController.getWorkoutPlansByUserId)//get user workoutPlans
-// app.post('/users', userController.createUser)
-// app.put('/users/:id', userController.updateUser)
-// app.delete('/users/:id', userController.deleteUser)
 

@@ -9,7 +9,6 @@ const getAllPicks = async (req, res) => {
     }
 }
 
-
 const getPickById = async (req, res) => {
     try {
         const {id} = req.params
