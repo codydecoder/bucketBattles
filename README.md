@@ -9,7 +9,7 @@ I intend to create a website that allows users to choose who they think will win
 ## Minimum Viable Product
 * Mongo DB with 'User', 'Game', and 'Pick' models
 * Full CRUD on backend for all models
-* Full CRUD on frontend for 'User', and 'Pick'
+* Full CRUD on frontend for at least one model
 * Log-In functionality
 * 
 
