@@ -12,7 +12,7 @@ export default function PickList(){
         const getPicks = async () => {
             try{
                 const response = await axios.get(`${BASE_URL}/picks`)
-                //console.log(response.data)
+                console.log(response.data)
                 setPicks(response.data)
             } catch (error) {
                 console.error("Error fetching picks:", error)
@@ -44,7 +44,7 @@ export default function PickList(){
                 {picks.map((pick, key) => (
                     <div className="border-2 border-red-600 bg-gray-400 rounded m-1" key={pick._id}>
                             <h3 className='text-xl font-medium'>Picker: <span className='text-base font-normal'>{pick.picker}</span></h3>
-                            <h3 className="text-xl font-medium">Game: <span className='text-base font-normal'>{pick.game.homeTeam} vs {pick.game.awayTeam}</span></h3>
+                            <h3 className="text-xl font-medium">Game: <span className='text-base font-normal'>{pick.game}</span></h3>
                             <h3 className='text-xl font-medium'>Picked Winner: <span className='text-base font-normal'>{pick.pickedWinner}</span></h3>
                             <button className='border-2 border-red-700 bg-red-500 rounded text-white p-1 m-1' onClick={() => deletePick(pick._id)}>Delete Pick</button>
                     </div>
