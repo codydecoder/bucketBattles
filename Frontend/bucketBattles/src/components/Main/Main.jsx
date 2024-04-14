@@ -1,9 +1,5 @@
 import React from 'react'
-import Account from './Account'
-import GameCard from './GameCard'
 import GameList from './GameList'
-import PickCard from './PickCard'
-import PickList from './PickList'
 import LoginPage from './LogInPage'
 
 
