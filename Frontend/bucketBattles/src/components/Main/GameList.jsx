@@ -8,10 +8,20 @@ export default function GameList(){
 
     const [games, setGames] = useState([])
 
-    const addGameToPickList = async (game) => {
-        console.log(game)
+    const addGameToPickListHome = async (game) => {
+        //console.log(game)
         try {
             const response = await axios.post(`${BASE_URL}/picks`, { game: game._id, pickedWinner: game.homeTeam._id })
+            console.log('Game added to pick list:', response.data)
+        } catch (error) {
+            console.error('Error adding game to pick list:', error.message)
+        }
+    }
+
+    const addGameToPickListAway = async (game) => {
+        //console.log(game)
+        try {
+            const response = await axios.post(`${BASE_URL}/picks`, { game: game._id, pickedWinner: game.awayTeam._id })
             console.log('Game added to pick list:', response.data)
         } catch (error) {
             console.error('Error adding game to pick list:', error.message)
@@ -22,7 +32,7 @@ export default function GameList(){
         const getGames = async () => {
             try{
                 const response = await axios.get(`${BASE_URL}/games`)
-                console.log(response.data)
+                //console.log(response.data)
                 setGames(response.data)
             } catch (error) {
                 console.error("Error fetching games:", error)
@@ -42,9 +52,10 @@ export default function GameList(){
             <ul>
                 {games.map((game, key) => (
                     <div className="border-2 border-red-600 bg-gray-400 rounded m-1" key={game._id}>
-                            <h3 className="text-lg">Game: <span className='text-sm'>{game.homeTeam.name} vs {game.awayTeam.name}</span></h3>
-                            <h3 className='text-lg'>Winner: <span className='text-sm'>{game.winningTeam ? game.winningTeam.name : 'TBD'}</span></h3>
-                            <button className='border-2 border-red-700 bg-red-500 rounded text-white p-1 m-1' onClick={() => addGameToPickList(game)}>Pick {game.homeTeam.name}</button>
+                            <h3 className="text-xl font-medium">Game: <span className='text-base font-normal'>{game.homeTeam.name} vs {game.awayTeam.name}</span></h3>
+                            <h3 className='text-xl font-medium'>Winner: <span className='text-base font-normal'>{game.winningTeam ? game.winningTeam.name : 'TBD'}</span></h3>
+                            <button className='border-2 border-red-700 bg-red-500 rounded text-white p-1 m-1' onClick={() => addGameToPickListHome(game)}>Pick {game.homeTeam.name}</button>
+                            <button className='border-2 border-red-700 bg-red-500 rounded text-white p-1 m-1' onClick={() => addGameToPickListAway(game)}>Pick {game.awayTeam.name}</button>
                     </div>
                 ))}
             </ul>
