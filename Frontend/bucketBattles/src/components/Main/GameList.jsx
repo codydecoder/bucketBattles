@@ -4,14 +4,14 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { BASE_URL } from '../../global'
 
-export default function GameList(){
+export default function GameList({userData}){
 
     const [games, setGames] = useState([])
 
     const addGameToPickListHome = async (game) => {
         //console.log(game)
         try {
-            const response = await axios.post(`${BASE_URL}/picks`, { game: game._id, pickedWinner: game.homeTeam._id })
+            const response = await axios.post(`${BASE_URL}/picks`, { picker: userData._id, game: game._id, pickedWinner: game.homeTeam._id })
             console.log('Game added to pick list:', response.data)
         } catch (error) {
             console.error('Error adding game to pick list:', error.message)
@@ -21,7 +21,7 @@ export default function GameList(){
     const addGameToPickListAway = async (game) => {
         //console.log(game)
         try {
-            const response = await axios.post(`${BASE_URL}/picks`, { game: game._id, pickedWinner: game.awayTeam._id })
+            const response = await axios.post(`${BASE_URL}/picks`, { picker: userData._id, game: game._id, pickedWinner: game.awayTeam._id })
             console.log('Game added to pick list:', response.data)
         } catch (error) {
             console.error('Error adding game to pick list:', error.message)

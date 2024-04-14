@@ -44,7 +44,7 @@ function App() {
         <Route path="/login" element={ isAuthenticated ? <Navigate replace to="/"/> : <LogInPage onLogin={handleLogin}/>}/>
         <Route path="/createAccount" element={<CreateAccount onSubmit={() => {}}/>}/>
         <Route path="/account" element={isAuthenticated ? <Account userData={user} /> : <Navigate replace to="/login"/>} /> 
-        <Route path="/games" element={<GameList/>}/>
+        <Route path="/games" element={<GameList userData={user}/>}/>
         <Route path="/picks" element={<PickList/>}/>
       </Routes>
       <Footer/>
