@@ -61,6 +61,6 @@ Currently in development
 ## Author
 This project was created solely by Cody Cadena\
 [GitHub](https://github.com/codydecoder)\
-[LinkedIn](https://www.linkedin.com/in/codycadena/)\
+[LinkedIn](https://www.linkedin.com/in/codycadena/)
 
 
