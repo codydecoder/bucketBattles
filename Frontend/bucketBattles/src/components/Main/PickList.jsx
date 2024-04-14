@@ -17,7 +17,7 @@ export default function PickList(){
                 setPicks(picksResponse.data)
 
                 const gamesResponse = await axios.get(`${BASE_URL}/games`)
-                console.log(gamesResponse.data)
+                //console.log(gamesResponse.data)
                 setGames(gamesResponse.data)
                 
             } catch (error) {

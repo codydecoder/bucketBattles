@@ -35,7 +35,6 @@ function App() {
 
     const isAuthenticated = !!user
 
-
   return (
     <Router>
       <Header/>
