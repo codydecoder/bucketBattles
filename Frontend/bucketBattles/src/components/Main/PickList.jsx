@@ -7,13 +7,19 @@ import { BASE_URL } from '../../global'
 export default function PickList(){
 
     const [picks, setPicks] = useState([])
+    const [games, setGames] = useState([])
     
     useEffect(() => {
         const getPicks = async () => {
             try{
-                const response = await axios.get(`${BASE_URL}/picks`)
-                console.log(response.data)
-                setPicks(response.data)
+                const picksResponse = await axios.get(`${BASE_URL}/picks`)
+                console.log(picksResponse.data)
+                setPicks(picksResponse.data)
+
+                const gamesResponse = await axios.get(`${BASE_URL}/games`)
+                console.log(gamesResponse.data)
+                setGames(gamesResponse.data)
+                
             } catch (error) {
                 console.error("Error fetching picks:", error)
             }
@@ -33,7 +39,7 @@ export default function PickList(){
     }
 
 
-    if(!picks) {
+    if(!picks || !games) {
         return <h1>Loading...</h1>
 
     } else {
@@ -42,6 +48,7 @@ export default function PickList(){
             <h1 className='text-2xl font-bold'>All Picks</h1>
             <ul>
                 {picks.map((pick, key) => (
+
                     <div className="border-2 border-red-600 bg-gray-400 rounded m-1" key={pick._id}>
                             <h3 className='text-xl font-medium'>Picker: <span className='text-base font-normal'>{pick.picker}</span></h3>
                             <h3 className="text-xl font-medium">Game: <span className='text-base font-normal'>{pick.game}</span></h3>

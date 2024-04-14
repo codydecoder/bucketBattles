@@ -3,7 +3,7 @@ const {Schema} = require('mongoose')
 
 const Pick = new Schema(
     {
-        picker: {type: Schema.Types.ObjectId, ref: 'user_id'},
+        picker: {type: Schema.Types.ObjectId, ref: 'user_id', default: 'none'},
         game: {type: Schema.Types.ObjectId, ref: 'game_id'},
         pickedWinner: {type: Schema.Types.ObjectId, ref: 'team_id'}
     },
