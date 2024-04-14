@@ -59,7 +59,8 @@ Currently in development
 
 ---
 ## Author
-[CodyDecoder](https://github.com/codydecoder)\
-[CodyCadena](https://www.linkedin.com/in/codycadena/)\
-This project was created solely by Cody Cadena
+This project was created solely by Cody Cadena\
+[GitHub](https://github.com/codydecoder)\
+[LinkedIn](https://www.linkedin.com/in/codycadena/)\
+
 
