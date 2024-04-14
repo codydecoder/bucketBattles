@@ -28,7 +28,7 @@ app.get('/', (req, res) => res.send('This is our landing page!'))
 
 //user controllers
 app.get('/users', userController.getAllUsers)
-app.get('/users/:id', userController.getUserById)
+app.get('/users/:id', userController.getUserByUsername)
 app.post('/users', userController.createUser)
 app.put('/users/:id', userController.updateUser)
 

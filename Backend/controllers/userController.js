@@ -9,6 +9,20 @@ const getAllUsers = async (req, res) => {
     }
 }
 
+const getUserByUsername = async (req, res) => {
+    try {
+        const { id } = req.params;
+        console.log(id);
+        const user = await User.findOne({ username: id })
+
+        if (user) {
+            return res.json(user);
+        }
+        return res.status(404).send('User not found!')
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
 
 const getUserById = async (req, res) => {
     try {
@@ -63,6 +77,7 @@ const deleteUser = async (req, res) => {
 
 module.exports = {
     getAllUsers,
+    getUserByUsername,
     getUserById,
     createUser,
     updateUser,
