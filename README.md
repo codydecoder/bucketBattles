@@ -55,7 +55,7 @@ I intend to create a website that allows users to choose who they think will win
 
 ---
 ## Project Status
-Currently in development
+Tentatively complete
 
 ---
 ## Author
